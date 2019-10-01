@@ -13,3 +13,9 @@ td {
 .hidden{
     background-color: black;
 }
+
+.score{
+    border: 1px solid black;
+    width: 30px;
+    padding: 1em;
+}

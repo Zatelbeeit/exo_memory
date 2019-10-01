@@ -10,22 +10,22 @@ divElement.appendChild(tableElement);
 var click1 = null;
 var click2 = null;
 
+var score=document.getElementsByClassName("score")[0]
+var count=score.innerHTML
 
 button.addEventListener("click", function () {
 
     tableElement.innerHTML = ""
-
+    count=0   
 
     var col = colInput.value
     var row = rowInput.value
 
     var nbCell = col * row
 
-
     if (nbCell % 2 == 0) {
 
         var numbers = []
-
 
         for (k = 1; k <= nbCell; k++) {
             numbers.push(k);
@@ -57,6 +57,7 @@ button.addEventListener("click", function () {
                         click1 = this;
                     } else{
                         click2 = this;
+                        
                         if(click1.innerHTML != click2.innerHTML){
                             setTimeout(function(){
                                 click1.classList.add("hidden");
@@ -68,6 +69,8 @@ button.addEventListener("click", function () {
                         } else {
                             click1 = null
                             click2 = null
+                            count++;
+                            score.innerHTML=count
                         }
 
                     }
